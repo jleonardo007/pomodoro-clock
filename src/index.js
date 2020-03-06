@@ -1,12 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./styles/styles.min.css";
+import PomodoroApp from "./Pomodoro/PomodoroContainer";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import pomodoroReducer from "./Pomodoro/Duck/reducer";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const store = createStore(pomodoroReducer);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <PomodoroApp />
+  </Provider>,
+  document.getElementById("root")
+);

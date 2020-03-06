@@ -1,0 +1,124 @@
+html{
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+*,*::before,*::after{
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+h1{font-size: 2rem;}
+h2{font-size: 1.5rem;}
+
+//Clock layout.........
+#root{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pomodoro-clock{
+  width: 400px;
+  height: 550px;
+  padding: 1.5rem;
+  
+  h1{
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .session-section,.break-section{
+    height: 120px;
+    
+    h2,p{
+      text-align: center;
+      margin-bottom: .5rem;
+    }
+    
+    p{font-size: 2rem;}
+    
+    .session-buttons,.break-buttons{
+      text-align: center;
+      i{
+        margin-left: .50rem;
+        margin-right: .50rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+    
+  }
+  
+  .timer-section{
+    height: 180px;
+    padding-top: 1.5rem;
+    
+    #timer-label{
+      margin-bottom: .5rem;
+      text-align: center;
+    }
+    
+    #time-left{
+      text-align: center;
+      font-size: 4rem;
+    }
+    
+    .timer-buttons{
+      text-align: center;
+      i{
+        margin-left: .50rem;
+        margin-right: .50rem;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+//Clock fonts.......
+@import url('https://fonts.googleapis.com/css?family=Lato|Tomorrow&display=swap');
+
+#pomodoro-clock{
+  font-family: 'Lato';
+}
+
+#time-left{
+  font-family: 'Tomorrow';
+}
+
+//Clock Themes........
+
+#root{
+  background: linear-gradient(to right, #41295a, #2f0743);
+}
+
+#pomodoro-clock{
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: #40101B;
+  border-radius: 2rem;
+}
+ 
+.session-section,.break-section{
+  p{color:#802036}
+  i{
+    border-radius: 50%;
+    background: #FF821F;
+    color:#40101B;
+  }
+  i:hover{
+    background: #248DB3;
+  }
+}
+
+.timer-section{
+  i:hover{
+    color: #FF821F;
+  }
+  .timer-ending{
+    color:#248DB3
+  }
+}
